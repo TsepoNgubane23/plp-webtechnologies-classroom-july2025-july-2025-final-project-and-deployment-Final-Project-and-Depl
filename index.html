@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Portfolio — Home</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">MyPortfolio</a>
+      <nav id="mainNav" class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="mainNav">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-content">
+        <h1 class="animate-up">Hello — I build web experiences</h1>
+        <p class="lead">Responsive websites, interactive UI, and clean code.</p>
+        <a class="btn primary" href="about.html">Learn more</a>
+      </div>
+      <div class="hero-image" aria-hidden="true"></div>
+    </section>
+
+    <section class="container features">
+      <h2>Featured</h2>
+      <div class="card-grid">
+        <article class="card">
+          <h3>Interactive UI</h3>
+          <p>JS-driven components: toggles, modals and form validation.</p>
+        </article>
+        <article class="card">
+          <h3>Responsive Design</h3>
+          <p>Mobile-first layouts that adapt smoothly across devices.</p>
+        </article>
+        <article class="card">
+          <h3>Performance</h3>
+          <p>Lightweight assets and accessible HTML/CSS semantics.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container cta">
+      <h2>Ready to collaborate?</h2>
+      <a class="btn secondary" href="contact.html">Contact me</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> MyPortfolio • Built with HTML, CSS & JS</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

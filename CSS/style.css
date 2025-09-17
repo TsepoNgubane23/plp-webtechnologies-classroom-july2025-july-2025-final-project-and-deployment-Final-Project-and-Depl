@@ -1,0 +1,127 @@
+/* -------------------------
+   Base layout & variables
+   ------------------------- */
+:root{
+  --container: 1100px;
+  --brand: #0066ff;
+  --muted: #6b7280;
+  --bg: #f4f6f8;
+  --card-bg: #ffffff;
+  --radius: 10px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:#0f172a;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+
+/* container */
+.container{
+  width:90%;
+  max-width:var(--container);
+  margin:0 auto;
+  padding: 2rem 0;
+}
+
+/* header */
+.site-header{
+  background:transparent;
+  position:sticky;
+  top:0;
+  z-index:20;
+  backdrop-filter: blur(4px);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding: 0.75rem 0;
+}
+.logo{font-weight:700; color:var(--brand); text-decoration:none; font-size:1.1rem}
+.nav{display:flex; gap:1rem}
+.nav a{color:inherit; text-decoration:none; padding:0.4rem 0.6rem; border-radius:6px}
+.nav a:hover{background:rgba(0,0,0,0.04)}
+
+/* mobile nav */
+.nav-toggle{
+  display:none;
+  background:transparent;
+  border:1px solid rgba(0,0,0,0.06);
+  padding:6px 10px;
+  border-radius:6px;
+}
+
+/* hero */
+.hero{
+  display:flex;
+  gap:2rem;
+  align-items:center;
+  justify-content:space-between;
+  padding-top:2.5rem;
+}
+.hero-content{max-width:55%;}
+.hero h1{font-size:2.25rem; margin:0 0 0.5rem; animation:fadeInUp 600ms ease both}
+.lead{color:var(--muted); margin:0 0 1rem}
+.hero-image{
+  width:220px;
+  height:220px;
+  border-radius:14px;
+  background:linear-gradient(135deg,var(--brand),#00b4ff);
+  transform:translateY(0);
+  box-shadow:0 8px 30px rgba(2,6,23,0.12);
+}
+
+/* buttons */
+.btn{
+  display:inline-block;
+  text-decoration:none;
+  padding:0.6rem 1rem;
+  border-radius:8px;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+}
+.primary{background:var(--brand); color:white}
+.secondary{background:transparent; border:1px solid rgba(0,0,0,0.06)}
+
+/* cards */
+.card-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; margin-top:1rem}
+.card{background:var(--card-bg); padding:1.1rem; border-radius:var(--radius); box-shadow:0 6px 18px rgba(8,15,26,0.04); transition:transform .25s ease, box-shadow .25s ease}
+.card:hover{transform:translateY(-6px); box-shadow:0 12px 30px rgba(8,15,26,0.06)}
+
+/* form */
+form{max-width:640px; margin-top:1rem}
+label{display:block; font-size:0.9rem; margin-top:0.6rem}
+input, textarea{
+  width:100%; padding:0.6rem; margin-top:0.3rem; border:1px solid #e6e9ee; border-radius:8px; background:white; resize:vertical
+}
+#formFeedback{margin-top:0.75rem; font-weight:600}
+
+/* footer */
+.site-footer{margin-top:3rem; padding:1rem 0; color:var(--muted)}
+
+/* small animations */
+@keyframes fadeInUp {
+  from{opacity:0; transform:translateY(8px)}
+  to{opacity:1; transform:none}
+}
+
+/* responsive */
+@media (max-width:900px){
+  .hero{flex-direction:column; text-align:center}
+  .hero-content{max-width:100%}
+  .hero-image{order:-1}
+}
+@media (max-width:700px){
+  .nav{display:none}
+  .nav-toggle{display:inline-block}
+  .header-inner{align-items:center}
+}
